@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package payment;
+
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.PriorityQueue;
 
 public  class Transaction implements Comparable<Transaction>  {
     long timer;
@@ -60,9 +60,6 @@ public  class Transaction implements Comparable<Transaction>  {
     
 }
 
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.PriorityQueue;
 public class Payment {
 
     public static void main(String[] args) {
