@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Scanner;
 import java.util.PriorityQueue;
 
-public  class Transaction implements Comparable<Transaction>  {
+class Transaction implements Comparable<Transaction>  {
     long timer;
     String id;
     String tier;
