@@ -1,4 +1,4 @@
-package Payment;
+package payment;
 
 import java.util.Collections;
 import java.util.Scanner;
@@ -60,7 +60,7 @@ class Transaction implements Comparable<Transaction>  {
     
 }
 
-public class Payment {
+public class payment {
 
     public static void main(String[] args) {
         PriorityQueue<Transaction> q = new PriorityQueue<>(Collections.reverseOrder());
