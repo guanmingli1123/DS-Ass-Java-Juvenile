@@ -1,5 +1,3 @@
-
-
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.PriorityQueue;
@@ -82,6 +80,10 @@ public class Payment{
                 break;
             }
             details = transaction.split(" ");
+            if(!isNumeric(details[0])){
+                System.out.println("The transaction time format is incorrect!");
+                break;
+            }
             timer = Long.valueOf(details[0]);
             id = details[1];
             tier = details[2];
@@ -102,12 +104,20 @@ public class Payment{
                         System.out.print(t + " ");
                     }
                 }
-            
             }
-       
-            
-
         }
     }
 
+    public static boolean isNumeric(String str) {
+    if (str == null) {
+        return false;
+    }
+    int sz = str.length();
+    for (int i = 0; i < sz; i++) {
+        if (Character.isDigit(str.charAt(i)) == false) {
+            return false;
+        }
+    }
+    return true;
+}
 }
