@@ -82,7 +82,7 @@ public class Payment{
             details = transaction.split(" ");
             if(!isNumeric(details[0])){
                 System.out.println("The transaction time format is incorrect!");
-                break;
+                continue;
             }
             timer = Long.valueOf(details[0]);
             id = details[1];
