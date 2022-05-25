@@ -99,7 +99,7 @@ public class Payment{
                  for(int i=0;i<100;i++){
                     if(!q.isEmpty()){
                         Transaction t = q.poll();
-                        System.out.println(t + " ");
+                        System.out.print(t + " ");
                     }
                 }
             
