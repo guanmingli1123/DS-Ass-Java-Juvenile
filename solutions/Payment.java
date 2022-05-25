@@ -80,10 +80,6 @@ public class Payment{
                 break;
             }
             details = transaction.split(" ");
-            if(!isNumeric(details[0])){
-                System.out.println("The transaction time format is incorrect!");
-                continue;
-            }
             timer = Long.valueOf(details[0]);
             id = details[1];
             tier = details[2];
