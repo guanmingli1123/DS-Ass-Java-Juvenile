@@ -96,9 +96,11 @@ public class Payment{
             digit2 = (int) (timer2 % 10000 / 1000);
             timer1 = timer2;
             if(digit2 > digit1){
-                 while(!q.isEmpty()){
-                    Transaction t = q.poll();
-                    System.out.println(t + " ");
+                 for(int i=0;i<100;i++){
+                    if(!q.isEmpty()){
+                        Transaction t = q.poll();
+                        System.out.println(t + " ");
+                    }
                 }
             
             }
