@@ -82,7 +82,7 @@ public class Payment{
                 break;
             }
             details = transaction.split(" ");
-            timer = Long.parseLong(details[0]);
+            timer = String.parseLong(details[0]);
             id = details[1];
             tier = details[2];
             Transaction t1 = new Transaction(timer, id, tier);
