@@ -7,13 +7,16 @@ import java.util.Queue;
 public class Navigation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num = Integer.parseInt(scanner.nextLine());
-        scanner.nextLine();
+        System.out.print("Number of test cases: ");
+        int num = Integer.valueOf(scanner.nextLine());
         for(int i=0;i<num;i++){
-            int numberOfConnections = Integer.parseInt(scanner.nextLine());
+            System.out.print("Number of connections: ");
+            int numberOfConnections = Integer.valueOf(scanner.nextLine());
             Graph graph = new Graph();
             for(int j=0;j<numberOfConnections;j++){
-                String[] stations = scanner.nextLine().split(" => ");
+                System.out.print("Station => Destination: ");
+                String input = scanner.nextLine();
+                String[] stations = input.split(" => ");
                 String source = stations[0];
                 String destination = stations[1];
                 graph.addVertex(source);
@@ -21,9 +24,12 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
+            System.out.print("Number of queries: ");
             int queries = Integer.parseInt(scanner.nextLine());
             for(int z=0;z<queries;z++){
-                String[] query = scanner.nextLine().split(" -> ");
+                System.out.print("Origin => Destination: ");
+                String input = scanner.nextLine();
+                String[] query = input.split(" -> ");
                 String from = query[0];
                 String to = query[1];
                 graph.bfs(from,to);
