@@ -32,7 +32,7 @@ public class Navigation {
     }
 }
 
-public class Vertex<T extends Comparable<T>,N extends Comparable <N>> {
+class Vertex<T extends Comparable<T>,N extends Comparable <N>> {
     T vertexInfo;
     int indeg;
     int outdeg;
@@ -64,7 +64,7 @@ public class Vertex<T extends Comparable<T>,N extends Comparable <N>> {
     }
 }
 
-public class Edge<T extends Comparable<T>,N extends Comparable <N>> {
+class Edge<T extends Comparable<T>,N extends Comparable <N>> {
     Vertex<T,N> toVertex;
     Edge<T,N> nextEdge;
 
@@ -79,7 +79,7 @@ public class Edge<T extends Comparable<T>,N extends Comparable <N>> {
     }
 }
 
-public class Graph <T extends Comparable<T>,N extends Comparable <N>>{
+class Graph <T extends Comparable<T>,N extends Comparable <N>>{
     Vertex<T,N> head;
     int size;
 
