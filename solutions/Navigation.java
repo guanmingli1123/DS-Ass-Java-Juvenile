@@ -15,8 +15,8 @@ public class Navigation {
             System.out.println("Please enter station A and station B: ");
             String input = scanner.nextLine();
             String[] stations = input.split(" => ");
-            graph.addVertex(stations[0]);
-            graph.addVertex(stations[1]);
+            graph.addVertex(stations[0].trim());
+            graph.addVertex(stations[1].trim());
             graph.addEdge(stations[0],stations[1]);
             graph.addEdge(stations[1],stations[0]);
         }
