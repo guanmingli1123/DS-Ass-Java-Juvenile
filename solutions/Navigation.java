@@ -26,7 +26,7 @@ public class Navigation {
             }
             System.out.print("Number of queries: ");
             int queries = Integer.valueOf(scanner.nextLine());
-            for(int z=0;z<queries-99;z++){
+            for(int z=0;z<queries-100;z++){
                 System.out.print("Origin => Destination: ");
                 String input = scanner.nextLine();
                 String[] query = input.split(" -> ");
