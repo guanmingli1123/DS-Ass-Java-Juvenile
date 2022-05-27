@@ -22,7 +22,6 @@ public class Navigation {
                 graph.addEdge(destination,source);
             }
             int queries = Integer.valueOf(scanner.nextLine());
-            scanner.nextLine();
             for(int z=0;z<queries;z++){
                 String input = scanner.nextLine();
                 System.out.print(input);
