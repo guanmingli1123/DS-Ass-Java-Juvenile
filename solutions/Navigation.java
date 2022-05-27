@@ -21,7 +21,7 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
-            int queries = Integer.parseInt(scanner.nextInt());
+            int queries = Integer.parseInt(scanner.nextLine());
             for(int i=0;i<queries;i++){
             String input = scanner.nextLine();
             String[] query = input.split(" -> ");
