@@ -21,9 +21,9 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
-            scanner.nextLine();
             System.out.print("Number of queries: ");
             int queries = Integer.valueOf(scanner.nextLine());
+            scanner.nextLine();
             for(int z=0;z<queries;z++){
                 String input = scanner.nextLine();
                 String[] query = input.split(" -> ");
