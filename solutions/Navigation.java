@@ -22,7 +22,7 @@ public class Navigation {
                 graph.addEdge(destination,source);
             }
             int queries = Integer.parseInt(scanner.nextLine());
-            for(int i=0;i<queries;i++){
+            for(int z=0;z<queries;z++){
             String input = scanner.nextLine();
             String[] query = input.split(" -> ");
             String from = query[0];
