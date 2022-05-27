@@ -180,8 +180,16 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
                 while(destinationVertex != null){
                     if(destinationVertex.vertexInfo.compareTo(destination)== 0){
                         Edge<T,N> currentEdge = sourceVertex.firstEdge;
-                        Edge<T,N> newEdge = new Edge<>(destinationVertex,currentEdge);
-                        sourceVertex.firstEdge = newEdge;
+                        if(currentEdge == null){
+                            Edge<T,N> newEdge = new Edge<>(destinationVertex,currentEdge);
+                            sourceVertex.firstEdge = newEdge;
+                            return true;
+                        }
+                        while(currentEdge.nextEdge!= null){
+                            currentEdge = currentEdge.nextEdge;
+                        }
+                        Edge<T,N> newEdge = new Edge<>(destinationVertex,null);
+                        currentEdge.nextEdge = newEdge;
                         sourceVertex.outdeg++;
                         destinationVertex.indeg++;
                         return true;
