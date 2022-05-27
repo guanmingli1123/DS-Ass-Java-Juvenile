@@ -24,16 +24,20 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
-            System.out.print("Number of queries: ");
-            int queries = Integer.valueOf(scanner.nextLine());
-            for(int z=0;z<queries;z++){
-                System.out.print("Origin => Destination: ");
-                String input = scanner.nextLine();
-                String[] query = input.split(" -> ");
-                String from = query[0];
-                String to = query[1];
-                graph.bfs(from,to);
-            }
+            queries(graph);
+        }
+    }
+    public static void queries(Graph graph){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Number of queries: ");
+        int queries = Integer.valueOf(scanner.nextLine());
+        for(int z=0;z<queries;z++){
+            System.out.print("Origin => Destination: ");
+            String input = scanner.nextLine();
+            String[] query = input.split(" -> ");
+            String from = query[0];
+            String to = query[1];
+            graph.bfs(from,to);
         }
     }
 }
