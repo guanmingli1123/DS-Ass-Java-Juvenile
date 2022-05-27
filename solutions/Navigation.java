@@ -13,7 +13,7 @@ public class Navigation {
             Graph graph = new Graph();
             for(int j=0;j<numberOfConnections;j++){
                 String input = scanner.nextLine();
-                String[] stations = input.split(" =>");
+                String[] stations = input.split(" => ");
                 String source = stations[0];
                 String destination = stations[1];
                 graph.addVertex(source);
