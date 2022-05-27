@@ -7,14 +7,11 @@ import java.util.Queue;
 public class Navigation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Number of test cases: ");
         int num = Integer.valueOf(scanner.nextLine());
         for(int i=0;i<num;i++){
-            System.out.print("Number of connections: ");
             int numberOfConnections = Integer.valueOf(scanner.nextLine());
             Graph graph = new Graph();
             for(int j=0;j<numberOfConnections;j++){
-                System.out.print("Station => Destination: ");
                 String input = scanner.nextLine();
                 String[] stations = input.split(" => ");
                 String source = stations[0];
@@ -24,20 +21,15 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
-            queries(graph);
-        }
-    }
-    public static void queries(Graph graph){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Number of queries: ");
-        int queries = Integer.valueOf(scanner.nextLine());
-        for(int z=0;z<queries;z++){
-            System.out.print("Origin => Destination: ");
-            String input = scanner.nextLine();
-            String[] query = input.split(" -> ");
-            String from = query[0];
-            String to = query[1];
-            graph.bfs(from,to);
+            System.out.print("Number of queries: ");
+            int queries = Integer.valueOf(scanner.nextLine());
+            for(int z=0;z<queries;z++){
+                String input = scanner.nextLine();
+                String[] query = input.split(" -> ");
+                String from = query[0];
+                String to = query[1];
+                graph.bfs(from,to);
+            }
         }
     }
 }
