@@ -284,12 +284,10 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         //Output the route
         for(int i=0;i<route.size();i++){
             if(i == route.size()-1){
-                System.out.print(route.get(i).vertexInfo);
+                System.out.print(route.get(i).vertexInfo + "\n");
                 break;
             }
             System.out.print(route.get(i).vertexInfo + " -> ");
         }
-        System.out.println();
     }
-
 }
