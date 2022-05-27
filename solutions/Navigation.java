@@ -15,10 +15,12 @@ public class Navigation {
             System.out.println("Please enter station A and station B: ");
             String input = scanner.nextLine();
             String[] stations = input.split("=>");
-            graph.addVertex(stations[0]);
-            graph.addVertex(stations[1]);
-            graph.addEdge(stations[0],stations[1]);
-            graph.addEdge(stations[1],stations[0]);
+            String source = stations[0];
+            String destination = stations[1];
+            graph.addVertex(source);
+            graph.addVertex(destination);
+            graph.addEdge(source,destination);
+            graph.addEdge(destination,source);
         }
         System.out.println("Please enter the number of queries: ");
         int queries = scanner.nextInt();
@@ -27,7 +29,9 @@ public class Navigation {
             System.out.println("Please enter origin and destination: ");
             String input = scanner.nextLine();
             String[] query = input.split("->");
-            graph.bfs(query[0],query[1]);
+            String from = query[0];
+            String to = query[1];
+            graph.bfs(from,to);
         }
     }
 }
