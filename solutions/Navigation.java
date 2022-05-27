@@ -25,7 +25,7 @@ public class Navigation {
                 graph.addEdge(destination,source);
             }
             System.out.print("Number of queries: ");
-            int queries = Integer.parseInt(scanner.nextLine());
+            int queries = Integer.valueOf(scanner.nextLine());
             for(int z=0;z<queries;z++){
                 System.out.print("Origin => Destination: ");
                 String input = scanner.nextLine();
