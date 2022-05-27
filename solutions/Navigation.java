@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Navigation {
     public static void main(String[] args) {
@@ -74,11 +78,6 @@ public class Edge<T extends Comparable<T>,N extends Comparable <N>> {
         nextEdge = a;
     }
 }
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Graph <T extends Comparable<T>,N extends Comparable <N>>{
     Vertex<T,N> head;
