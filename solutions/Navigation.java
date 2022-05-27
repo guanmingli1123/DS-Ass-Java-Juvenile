@@ -23,8 +23,7 @@ public class Navigation {
             }
             int queries = Integer.parseInt(scanner.nextLine());
             for(int z=0;z<queries;z++){
-                String input = scanner.nextLine();
-                String[] query = input.split(" -> ");
+                String[] query = scanner.nextLine().split(" -> ");
                 String from = query[0];
                 String to = query[1];
                 graph.bfs(from,to);
