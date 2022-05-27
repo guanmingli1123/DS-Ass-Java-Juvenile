@@ -27,7 +27,7 @@ public class Navigation {
             for(int z=0;z<queries;z++){
                 String input = scanner.nextLine();
                 System.out.print(input);
-                String[] query = input.split("->");
+                String[] query = input.split(" -> ");
                 String from = query[0];
                 String to = query[1];
                 graph.bfs(from,to);
