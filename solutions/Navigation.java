@@ -290,7 +290,6 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
             System.out.print(route.get(i).vertexInfo + " -> ");
         }
         System.out.println();
-        System.out.println();
     }
 
 }
