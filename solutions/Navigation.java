@@ -7,31 +7,28 @@ import java.util.Queue;
 public class Navigation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the number of test cases: ");
-        int num = scanner.nextInt();
-        scanner.nextLine();
-        Graph graph = new Graph();
+        int num = Integer.parseInt(scanner.nextLine());
         for(int i=0;i<num;i++){
-            System.out.println("Please enter station A and station B: ");
+            int numberOfConnections = Integer.parseInt(scanner.nextLine());
+            Graph graph = new Graph();
+            for(int j=0;j<numberOfConnections;j++){
+                String input = scanner.nextLine();
+                String[] stations = input.split(" =>");
+                String source = stations[0];
+                String destination = stations[1];
+                graph.addVertex(source);
+                graph.addVertex(destination);
+                graph.addEdge(source,destination);
+                graph.addEdge(destination,source);
+            }
+            int queries = Integer.parseInt(scanner.nextInt());
+            for(int i=0;i<queries;i++){
             String input = scanner.nextLine();
-            String[] stations = input.split("=>");
-            String source = stations[0];
-            String destination = stations[1];
-            graph.addVertex(source);
-            graph.addVertex(destination);
-            graph.addEdge(source,destination);
-            graph.addEdge(destination,source);
-        }
-        System.out.println("Please enter the number of queries: ");
-        int queries = scanner.nextInt();
-        scanner.nextLine();
-        for(int i=0;i<queries;i++){
-            System.out.println("Please enter origin and destination: ");
-            String input = scanner.nextLine();
-            String[] query = input.split("->");
+            String[] query = input.split(" -> ");
             String from = query[0];
             String to = query[1];
             graph.bfs(from,to);
+            }
         }
     }
 }
