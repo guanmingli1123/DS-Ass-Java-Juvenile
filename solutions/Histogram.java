@@ -7,8 +7,6 @@ public class Histogram {
         for(int i=0;i<numberOfTestCases;i++){;
             int numberOfDataPoints = scanner.nextInt();
             int numberOfBins = scanner.nextInt();
-                     
-
             int[] data = new int[numberOfDataPoints];
             for(int j=0;j<data.length;j++){
                 data[j] = scanner.nextInt();
@@ -47,10 +45,7 @@ public class Histogram {
                 counts[g] = count;
             }
             for(int q=0;q< cutsoff.length;q++){
-                
-         
                 System.out.print(cutsoff[q] + " ");
-                
             }
             System.out.println();                                 
             for(int m=0;m< counts.length;m++){
