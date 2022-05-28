@@ -60,6 +60,7 @@ public class Histogram {
                 }
                 System.out.print(counts[m] + " ");
             }
+             System.out.println();                              
         }
     }
 }
