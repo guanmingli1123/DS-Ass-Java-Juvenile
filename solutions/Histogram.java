@@ -47,20 +47,17 @@ public class Histogram {
                 counts[g] = count;
             }
             for(int q=0;q< cutsoff.length;q++){
-                if(q == cutsoff.length-1){
-                    System.out.print(cutsoff[q] + "\n");
-                    break;
-                }
+                
+         
                 System.out.print(cutsoff[q] + " ");
+                
             }
+            System.out.println();                                 
             for(int m=0;m< counts.length;m++){
-                if(m == counts.length-1){
-                    System.out.print(counts[m] + "\n");
-                    break;
-                }
+                
                 System.out.print(counts[m] + " ");
             }
-                               
+            System.out.println();
         }
     }
 }
