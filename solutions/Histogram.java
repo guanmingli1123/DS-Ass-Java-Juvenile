@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class Histogram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int numberOfTestCases = Integer.valueOf(scanner.nextLine());
-        for(int i=0;i<numberOfTestCases;i++){
-            String input = scanner.nextLine();
-            int numberOfDataPoints = Integer.valueOf(input.split(" ")[0]);
-            int numberOfBins = Integer.valueOf(input.split(" ")[1]);
-            String[] inputs = scanner.nextLine().split(" ");
-            int[] data = new int[inputs.length];
+        int numberOfTestCases = scanner.nextInt();
+        for(int i=0;i<numberOfTestCases;i++){;
+            int numberOfDataPoints = scanner.nextInt();
+            int numberOfBins = scanner.nextInt();
+                     
+
+            int[] data = new int[numberOfDataPoints];
             for(int j=0;j<inputs.length;j++){
-                data[j] = Integer.valueOf(inputs[j]);
+                data[j] = scanner.nextInt();
             }
             int min = Integer.valueOf(data[0]);
             int max = Integer.valueOf(data[0]);
