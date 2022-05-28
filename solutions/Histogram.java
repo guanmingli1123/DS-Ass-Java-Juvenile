@@ -4,7 +4,6 @@ public class Histogram {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numberOfTestCases = Integer.valueOf(scanner.nextLine());
-        for(int i=0;i<numberOfTestCases;i++){
             String input = scanner.nextLine();
             int numberOfDataPoints = Integer.valueOf(input.split(" ")[0]);
             int numberOfBins = Integer.valueOf(input.split(" ")[1]);
@@ -60,6 +59,5 @@ public class Histogram {
                 }
                 System.out.print(counts[m] + " ");
             }
-        }
     }
 }
