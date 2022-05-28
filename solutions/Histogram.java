@@ -10,7 +10,7 @@ public class Histogram {
                      
 
             int[] data = new int[numberOfDataPoints];
-            for(int j=0;j<inputs.length;j++){
+            for(int j=0;j<data.length;j++){
                 data[j] = scanner.nextInt();
             }
             int min = Integer.valueOf(data[0]);
