@@ -23,7 +23,7 @@ public class Histogram {
                     max = data[z];
                 }
             }
-            int interval = (max-min)/2;
+            int interval = (max-min)/numberOfBins;
             int[] cutsoff = new int[numberOfBins+1];
             cutsoff[0] = min;
             for(int k=1;k< cutsoff.length;k++){
@@ -34,7 +34,13 @@ public class Histogram {
             for(int g=0;g<numberOfBins;g++){
                 int count =0;
                 for(int h=0;h<numberOfDataPoints;h++){
-                    if(h> cutsoff[g] && h< cutsoff[g+1]){
+                    if(cutsoff[g+1] == max){
+                        if(data[h]>= cutsoff[g] && data[h]<= cutsoff[g+1]){
+                            count++;
+                            continue;
+                        }
+                    }
+                    if(data[h]>= cutsoff[g] && data[h]< cutsoff[g+1]){
                         count++;
                     }
                 }
@@ -43,12 +49,14 @@ public class Histogram {
             for(int q=0;q< cutsoff.length;q++){
                 if(q == cutsoff.length-1){
                     System.out.print(cutsoff[q] + "\n");
+                    break;
                 }
                 System.out.print(cutsoff[q] + " ");
             }
             for(int m=0;m< counts.length;m++){
                 if(m == counts.length-1){
                     System.out.print(counts[m] + "\n");
+                    break;
                 }
                 System.out.print(counts[m] + " ");
             }
