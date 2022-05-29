@@ -1,6 +1,6 @@
 
 #!/bin/bash
-VERBOSE=true
+VERBOSE=$1
 TIMELIMIT=3s
 mkfifo iopipe0 iopipe1
 
