@@ -7,7 +7,7 @@ import java.util.Queue;
 public class Navigation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num = scanner.nextInt();
+        int num = Integer.parseInt(scanner.nextLine());
         for(int i=0;i<num;i++){
             int numberOfConnections = Integer.parseInt(scanner.nextLine());
             Graph graph = new Graph();
