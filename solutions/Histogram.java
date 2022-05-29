@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Histogram {
@@ -11,16 +12,9 @@ public class Histogram {
             for(int j=0;j<data.length;j++){
                 data[j] = scanner.nextInt();
             }
+            Arrays.sort(data);
             int min = data[0];
-            int max = data[0];
-            for(int z=1;z<data.length;z++){
-                if(min > data[z]){
-                    min = data[z];
-                }
-                if(max < data[z]){
-                    max = data[z];
-                }
-            }
+            int max = data[numberOfDataPoints-1];
             int interval = (max-min)/numberOfBins;
             int[] cutsoffs = new int[numberOfBins+1];
             cutsoffs[0] = min;
@@ -28,28 +22,29 @@ public class Histogram {
                 int value = cutsoffs[k-1]+interval;
                 cutsoffs[k] = value;
             }
+            int k= 1;
+            int j =0;
+            int temp = 0;
             int[] counts = new int[numberOfBins];
-            for(int g=0;g<numberOfBins;g++){
-                int count =0;
-                for(int h=0;h<numberOfDataPoints;h++){
-                    if(cutsoffs[g+1] == max){
-                        if(data[h]>= cutsoffs[g] && data[h]<= cutsoffs[g+1]){
-                            count++;
-                            continue;
-                        }
+            for(int g=0;g<numberOfDataPoints;g++) {
+                if (data[g] < cutsoffs[k]) {
+                    temp++;
+                } else {
+                    if(data[g] == max){
+                        temp++;
                     }
-                    if(data[h]>= cutsoffs[g] && data[h]< cutsoffs[g+1]){
-                        count++;
-                    }
+                    counts[j] = temp;
+                    temp=1;
+                    k++;
+                    j++;
                 }
-                counts[g] = count;
             }
-            for(Integer cutsoff: cutsoffs)
+            for(Integer cutsoff : cutsoffs)
                 System.out.print(cutsoff + " ");
-            System.out.println();                                 
+            System.out.println();
             for(Integer count: counts)
                 System.out.print(count + " ");
-            System.out.println();                                 
+            System.out.println();
         }
     }
 }
