@@ -11,8 +11,8 @@ public class Histogram {
             for(int j=0;j<data.length;j++){
                 data[j] = scanner.nextInt();
             }
-            int min = Integer.valueOf(data[0]);
-            int max = Integer.valueOf(data[0]);
+            int min = data[0];
+            int max = data[0];
             for(int z=1;z<data.length;z++){
                 if(min > data[z]){
                     min = data[z];
@@ -44,13 +44,11 @@ public class Histogram {
                 }
                 counts[g] = count;
             }
-            for(Integer cutsoff: cutsoffs){
+            for(Integer cutsoff: cutsoffs)
                 System.out.print(cutsoff + " ");
-            }
             System.out.println();                                 
-            for(Integer count: counts){
+            for(Integer count: counts)
                 System.out.print(count + " ");
-            }
             System.out.println();
         }
     }
