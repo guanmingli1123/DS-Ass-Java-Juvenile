@@ -9,7 +9,7 @@ public class Navigation {
         Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
         for(int i=0;i<num;i++){
-            int numberOfConnections = scanner.nextInt();
+            int numberOfConnections = Integer.parseInt(scanner.nextLine());
             Graph graph = new Graph();
             for(int j=0;j<numberOfConnections;j++){
                 String[] stations = scanner.nextLine().split(" => ");
