@@ -22,35 +22,34 @@ public class Histogram {
                 }
             }
             int interval = (max-min)/numberOfBins;
-            int[] cutsoff = new int[numberOfBins+1];
-            cutsoff[0] = min;
-            for(int k=1;k< cutsoff.length;k++){
-                int value = cutsoff[k-1]+interval;
-                cutsoff[k] = value;
+            int[] cutsoffs = new int[numberOfBins+1];
+            cutsoffs[0] = min;
+            for(int k=1;k< cutsoffs.length;k++){
+                int value = cutsoffs[k-1]+interval;
+                cutsoffs[k] = value;
             }
             int[] counts = new int[numberOfBins];
             for(int g=0;g<numberOfBins;g++){
                 int count =0;
                 for(int h=0;h<numberOfDataPoints;h++){
-                    if(cutsoff[g+1] == max){
-                        if(data[h]>= cutsoff[g] && data[h]<= cutsoff[g+1]){
+                    if(cutsoffs[g+1] == max){
+                        if(data[h]>= cutsoffs[g] && data[h]<= cutsoffs[g+1]){
                             count++;
                             continue;
                         }
                     }
-                    if(data[h]>= cutsoff[g] && data[h]< cutsoff[g+1]){
+                    if(data[h]>= cutsoffs[g] && data[h]< cutsoffs[g+1]){
                         count++;
                     }
                 }
                 counts[g] = count;
             }
-            for(int q=0;q< cutsoff.length;q++){
-                System.out.print(cutsoff[q] + " ");
+            for(Integer cutsoff: cutsoffs){
+                System.out.print(cutsoff + " ");
             }
             System.out.println();                                 
-            for(int m=0;m< counts.length;m++){
-                
-                System.out.print(counts[m] + " ");
+            for(Integer count: counts){
+                System.out.print(count + " ");
             }
             System.out.println();
         }
