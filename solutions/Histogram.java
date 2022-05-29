@@ -49,7 +49,6 @@ public class Histogram {
             System.out.println();                                 
             for(Integer count: counts)
                 System.out.print(count + " ");
-            System.out.println();
         }
     }
 }
