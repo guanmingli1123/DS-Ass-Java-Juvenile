@@ -246,6 +246,7 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
             for(int i=0;i<neighbour.size();i++){
                 clearpath.add(neighbour.get(i));
             }
+            clearPath.add(sourceVertex);
             for(Vertex node: neighbour){
                 if(node.visited != true){
                     //Visit and add the node to the queue
