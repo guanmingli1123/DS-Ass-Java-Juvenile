@@ -95,14 +95,13 @@ public class Payment{
                 break;
             } 
             if(digit2 > digit1){
-                for(int i=0;i<=100;i++){
+                for(int i=0;i<100;i++){
                     if(!q.isEmpty()){
                         Transaction t = q.poll();
                         System.out.print(t + " ");
+                    }
                 }
-                }
-                        System.out.println();
-            
+                System.out.println();
             }
             digit1 = digit3 = digit2;
         }
