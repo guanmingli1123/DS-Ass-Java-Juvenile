@@ -99,6 +99,7 @@ public class Payment{
                         System.out.print(t + " ");
                     }
                 }
+                System.out.println();
             }
         }
     }
