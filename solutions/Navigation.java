@@ -219,8 +219,8 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
 
     public void bfs(T source, T destination){
         //Create queue
-        Queue<Vertex> queue = new LinkedList<>();
-        ArrayList<Vertex> clearpath = new ArrayList<>();
+        LinkedList<Vertex> queue = new LinkedList<>();
+        ArrayList<Vertex> clearPath = new ArrayList<>();
         if(head == null){
             return;
         }
@@ -240,11 +240,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         //BFS until queue is empty and not reached to the end node
         while(!queue.isEmpty()){
             //pop a node from queue for search operation
-            Vertex current_node = queue.poll();
+            Vertex current_node = queue.removeFirst();
             //Loop through neighbors node to find the 'end'
             ArrayList<Vertex> neighbour = getNeighbours(current_node);
             for(int i=0;i<neighbour.size();i++){
-                clearpath.add(neighbour.get(i));
+                clearPath.add(neighbour.get(i));
             }
             clearPath.add(sourceVertex);
             for(Vertex node: neighbour){
@@ -262,15 +262,15 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
                 }
             }
         }
-        trace_route(destination);
-        for(int i=0;i<clearpath.size();i++){
-            clearpath.get(i).unVisit();
-            clearpath.get(i).prevVertex = null;
+        trace_route(source,destination);
+        for(int i=0;i<clearPath.size();i++){
+            clearPath.get(i).visited = false;
+            clearPath.get(i).prevVertex = null;
         }
     }
 
     //Function to trace the route using preceding nodes
-    private void trace_route(T destination){
+    private void trace_route(T source,T destination){
         Vertex<T,N> destinationVertex = head;
         while(destinationVertex != null){
             if(destinationVertex.vertexInfo.compareTo(destination) == 0){
@@ -285,11 +285,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
             route.add(destinationVertex);
             destinationVertex = destinationVertex.prevVertex;
         }
+
         //Reverse the route - bring start to the front
-        Collections.reverse(route);
         //Output the route
-        for(int i=0;i<route.size();i++){
-            if(i == route.size()-1){
+        for(int i= route.size()-1;i>=0;i--){
+            if(i == 0){
                 System.out.print(route.get(i).vertexInfo + "\n");
                 break;
             }
