@@ -105,7 +105,6 @@ public class Payment{
             
             }
             digit1 = digit3 = digit2;
-            }
         }
     }
 
