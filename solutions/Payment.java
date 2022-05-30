@@ -6,7 +6,7 @@ class Transaction implements Comparable<Transaction>  {
     long timer;
     String id;
     String tier;
-    Integer time;
+    Long stime;
 
     public Transaction(long timer, String id, String tier) {
         this.timer = timer;
@@ -26,28 +26,26 @@ class Transaction implements Comparable<Transaction>  {
         return tier;
     }
 
-    public Integer getTime() {
+    public Long getStartingTime() {
         switch(tier){
         case "PLATINUM":
-            return time = 3000;
+            return stime = timer - 3000;
         case "GOLD":
-            return time = 2000;
+            return stime = timer - 2000;
         case "SILVER":
-            return time = 1000;
+            return stime = timer - 1000;
         case "BRONZE":
-            return time = 0;
-        case "":
-            return time = -1;
+            return stime = timer - 0;
         default:
             break;
         }
-        return time;
+        return stime;
     }
     
     
-    @Override
+   @Override
     public int compareTo(Transaction o1) {
-        return this.getTime().compareTo(o1.getTime());
+        return this.getStartingTime().compareTo(o1.getStartingTime());
     }
 
     @Override
@@ -71,6 +69,7 @@ public class Payment{
         long timer1;
         int digit2;
         long timer2;
+        int digit3=0;
 
         while (true) {
             Scanner in = new Scanner(System.in);
@@ -83,23 +82,29 @@ public class Payment{
             id = details[1];
             tier = details[2];
             Transaction t1 = new Transaction(timer, id, tier);
+            if(q.peek()!=null && digit3<digit1){
+                timer1 = q.peek().getTimer();
+                digit1 = (int) (timer1 % 10000 / 1000); 
+            }
             q.offer(new Transaction(timer, id, tier));
-            while(q.size()==1){
-                timer1 = t1.getTimer();
-                digit1 = (int) (timer1 % 10000 / 1000);
-                break;
-            } 
             timer2 = t1.getTimer();
             digit2 = (int) (timer2 % 10000 / 1000);
-            timer1 = timer2;
+            while(q.size()==1){
+                timer1 = timer2;
+                digit1 = (int) (timer1 % 10000 / 1000); 
+                break;
+            } 
             if(digit2 > digit1){
-                 for(int i=0;i<100;i++){
+                for(int i=0;i<100;i++){
                     if(!q.isEmpty()){
                         Transaction t = q.poll();
                         System.out.print(t + " ");
-                    }
                 }
-                System.out.println();
+                }
+                        System.out.println();
+            
+            }
+            digit1 = digit3 = digit2;
             }
         }
     }
