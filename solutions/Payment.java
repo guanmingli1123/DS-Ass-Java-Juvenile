@@ -74,7 +74,6 @@ public class Payment{
 
         while (true) {
             Scanner in = new Scanner(System.in);
-            System.out.println("Please enter your transaction time, id and tier: ");
             transaction = in.nextLine();
             if (transaction.equals("EXIT")) {
                 break;
