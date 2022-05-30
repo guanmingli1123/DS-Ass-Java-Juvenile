@@ -1,8 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class Navigation {
     public static void main(String[] args) {
