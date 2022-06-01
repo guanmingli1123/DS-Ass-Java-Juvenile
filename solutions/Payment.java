@@ -77,6 +77,10 @@ public class Payment{
             if (transaction.equals("EXIT")) {
                 break;
             }
+            if(transaction.equals("REBOOT")){
+                q.clear();
+                continue;
+            }
             details = transaction.split(" ");
             timer = Long.valueOf(details[0]);
             id = details[1];
