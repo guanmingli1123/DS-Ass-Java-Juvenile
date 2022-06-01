@@ -59,7 +59,7 @@ class Transaction implements Comparable<Transaction>  {
 public class Payment{
 
     public static void main(String[] args) {
-        PriorityQueue<Transaction> q = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Transaction> q = new PriorityQueue<>();
         String transaction;
         String[] details;
         long timer;
@@ -110,17 +110,4 @@ public class Payment{
             digit1 = digit3 = digit2;
         }
     }
-
-    public static boolean isNumeric(String str) {
-    if (str == null) {
-        return false;
-    }
-    int sz = str.length();
-    for (int i = 0; i < sz; i++) {
-        if (Character.isDigit(str.charAt(i)) == false) {
-            return false;
-        }
-    }
-    return true;
-}
 }
