@@ -11,7 +11,7 @@ for case in sorted(test_cases):
             if line == "END\n":
                 print("REBOOT")
                 break
-            if line != "CLEAR\n":
+            if line == "CLEAR\n":
                 print(line, end="")
             else:
                 ans = set(f.readline().strip().split())
