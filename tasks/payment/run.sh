@@ -1,6 +1,6 @@
 #!/bin/bash
 VERBOSE=true
-TIMELIMIT=60s
+TIMELIMIT=3s
 SOLUTION_FILE=Payment
 RUNNER_FILE=tasks/payment/run.py
 mkfifo iopipe0 iopipe1
