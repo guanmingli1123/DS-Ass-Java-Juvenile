@@ -97,15 +97,16 @@ public class Payment{
                 timer1 = timer2;
                 digit1 = (int) (timer1 % 10000 / 1000); 
                 break;
-            } 
+            }
+            String ans = "";
             if(digit2 > digit1){
                 for(int i=0;i<100;i++){
                     if(!q.isEmpty()){
                         Transaction t = q.poll();
-                        System.out.print(t);
+                        ans = ans + t;
                     }
                 }
-                System.out.println(in.nextLine());
+                System.out.println(ans);
             }
             digit1 = digit3 = digit2;
         }
