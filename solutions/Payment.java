@@ -106,7 +106,7 @@ public class Payment{
                         ans = ans + t;
                     }
                 }
-                System.out.println(ans);
+                System.out.print(ans);
             }
             digit1 = digit3 = digit2;
         }
