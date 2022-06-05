@@ -84,7 +84,7 @@ class Transaction implements Comparable<Transaction> {
         this.tier = tier;
     }
 
-    public long getTimer() {
+    public Long getTimer() {
         return timer;
     }
 
@@ -110,10 +110,6 @@ class Transaction implements Comparable<Transaction> {
                 break;
         }
         return stime;
-    }
-    
-    public Long getTimer() {
-        return timer;
     }
 
     @Override
