@@ -8,9 +8,14 @@ public class Payment1 {
         PriorityQueue<Transaction> q = new PriorityQueue<>();
         String transaction;
         String[] details;
-        long timer,  timer2;
-        String id, tier;
-        int digit1 = 0, digit2;
+        long timer;
+        String id;
+        String tier;
+        int digit1=0;
+        long timer1;
+        int digit2;
+        long timer2;
+        int digit3=0;
 
         Scanner in = new Scanner(System.in);
 
@@ -19,7 +24,7 @@ public class Payment1 {
                 if (transaction.equals("EXIT")) {
                     break;
                 }
-                if (transaction.equals("END")) {
+                if (transaction.equals("REBOOT")) {
                     q.clear();
                     break;
                 }
