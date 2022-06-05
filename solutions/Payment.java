@@ -82,6 +82,11 @@ class Transaction implements Comparable<Transaction> {
         this.timer = timer;
         this.id = id;
         this.tier = tier;
+        getStartingTime();
+    }
+    
+    public Long getSTime() {
+        return stime;
     }
 
     public Long getTimer() {
@@ -96,20 +101,19 @@ class Transaction implements Comparable<Transaction> {
         return tier;
     }
 
-    public Long getStartingTime() {
+    public void getStartingTime() {
         switch (tier) {
             case "PLATINUM":
-                return stime = timer - 3000;
+                stime = timer - 3000;
             case "GOLD":
-                return stime = timer - 2000;
+                stime = timer - 2000;
             case "SILVER":
-                return stime = timer - 1000;
+                stime = timer - 1000;
             case "BRONZE":
-                return stime = timer;
+                stime = timer;
             default:
                 break;
         }
-        return stime;
     }
 
     @Override
@@ -117,7 +121,7 @@ class Transaction implements Comparable<Transaction> {
         if(this.getStartingTime().compareTo(o1.getStartingTime())== 0){
             return this.getTimer().compareTo(o1.getTimer());
         }else{
-            return this.getStartingTime().compareTo(o1.getStartingTime());
+            return this.getSTime().compareTo(o1.getSTime());
         }
     }
 
