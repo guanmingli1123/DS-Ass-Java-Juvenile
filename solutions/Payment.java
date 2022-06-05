@@ -76,7 +76,7 @@ public class Payment{
 
 
 
-class Sort {
+class Sort{
 
     static ArrayList<Transaction> temp;
 
@@ -180,7 +180,7 @@ class Queue {
 
 }
 
-class Transaction {
+class Transaction{
 
     private long timer;
     private String tier;
