@@ -15,7 +15,7 @@ public class Payment1 {
         Scanner in = new Scanner(System.in);
 
         while (true) {
-                transaction = fileReader.nextLine();
+                transaction = in.nextLine();
                 if (transaction.equals("EXIT")) {
                     break;
                 }
