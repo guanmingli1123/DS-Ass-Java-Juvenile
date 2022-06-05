@@ -1,10 +1,10 @@
-package Payment;
+package payment;
 
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Payment{
+public class payment{
     
     static String transaction;
     static Long timer;
