@@ -105,13 +105,15 @@ class Transaction implements Comparable<Transaction> {
         switch (tier) {
             case "PLATINUM":
                 stime = timer - 3000;
+                break;
             case "GOLD":
                 stime = timer - 2000;
+                break;
             case "SILVER":
                 stime = timer - 1000;
+                break;
             case "BRONZE":
                 stime = timer;
-            default:
                 break;
         }
     }
