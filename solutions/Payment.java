@@ -50,7 +50,7 @@ public class Payment {
                     break;
                 }
                 String ans = "";
-                if (digit2 > digit1) {
+                if (digit2 != digit1) {
                     int size = q.size();
                     if(size<100){
                         while(!q.isEmpty()){
