@@ -114,7 +114,11 @@ class Transaction implements Comparable<Transaction> {
 
     @Override
     public int compareTo(Transaction o1) {
-        return o1.getStartingTime().compareTo(this.getStartingTime());
+        if(this.getStartingTime().compareTo(o1.getStartingTime() == 0）{
+            return -1;
+        }else{
+            return this.getStartingTime().compareTo(o1.getStartingTime());
+        }
     }
 
     @Override
