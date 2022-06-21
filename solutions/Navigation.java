@@ -241,8 +241,6 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
                         }
                         Edge<T,N> newEdge = new Edge<>(destinationVertex,null);
                         currentEdge.nextEdge = newEdge;
-                        sourceVertex.outdeg++;
-                        destinationVertex.indeg++;
                         return true;
                     }
                     destinationVertex = destinationVertex.nextVertex;
