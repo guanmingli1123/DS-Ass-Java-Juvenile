@@ -5,8 +5,10 @@ import java.util.LinkedList;
 public class Navigation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        //Number of the test cases
         int num = Integer.valueOf(scanner.nextLine());
         for(int i=0;i<num;i++){
+            // Number of the connection in this graph
             int numberOfConnections = Integer.valueOf(scanner.nextLine());
             Graph graph = new Graph();
             for(int j=0;j<numberOfConnections;j++){
@@ -18,6 +20,7 @@ public class Navigation {
                 graph.addEdge(source,destination);
                 graph.addEdge(destination,source);
             }
+            //The number of queries from user
             int queries = Integer.parseInt(scanner.nextLine());
             for(int z=0;z<queries;z++){
                 String[] query = scanner.nextLine().split(" -> ");
