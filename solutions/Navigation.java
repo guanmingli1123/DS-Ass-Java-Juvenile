@@ -30,65 +30,114 @@ public class Navigation {
 }
 
 class Vertex<T extends Comparable<T>,N extends Comparable <N>> {
+    /***
+     * To collect the information of this vertex
+     */
     T vertexInfo;
-    int indeg;
-    int outdeg;
+
+    /***
+     * store the link to next Vertex
+     */
     Vertex<T,N> nextVertex;
+
+    /***
+     * store all the information that this vertex is connected to another Vertex
+     */
     Edge<T,N> firstEdge;
+
+    /***
+     * To check whether this vertex is visited or not
+     */
     boolean visited = false;
+
+    /***
+     * Store the path information for previous vertex
+     */
     Vertex<T,N> prevVertex;
 
+    /***
+     * Initiliaze the vertex
+     */
     public Vertex(){
         vertexInfo = null;
-        indeg = 0;
-        outdeg = 0;
         nextVertex = null;
         firstEdge = null;
         prevVertex = null;
     }
 
+    /***
+     * Initialize vertex with the information and next Vertex to it
+     * @param vInfo the information of this vertex
+     * @param next the vertex next to this vertex
+     */
     public Vertex(T vInfo, Vertex<T,N> next){
         vertexInfo = vInfo;
-        indeg =0;
-        outdeg = 0;
         nextVertex = next;
         firstEdge = null;
         prevVertex = null;
     }
-
-    public void unVisit(){
-        this.visited = false;
-    }
 }
 
 class Edge<T extends Comparable<T>,N extends Comparable <N>> {
+    /***
+     * Vertex information
+     */
     Vertex<T,N> toVertex;
+
+    /***
+     * Edge that is connect to next Vertex
+     */
     Edge<T,N> nextEdge;
 
+    /***
+     * Initialise the edge
+     */
     public Edge(){
         toVertex = null;
         nextEdge = null;
     }
 
+    /***
+     * Initialize the edge with the next vertex and next edge
+     * @param destination next Vertex
+     * @param a next edge
+     */
     public Edge(Vertex<T,N> destination, Edge<T,N> a){
         toVertex = destination;
         nextEdge = a;
-    }
 }
 
 class Graph <T extends Comparable<T>,N extends Comparable <N>>{
+    /***
+     * Head of the vertex
+     */
     Vertex<T,N> head;
+    /***
+     * size of the graph
+     */
     int size;
 
+     /***
+     * Initialize the graph
+     */
     public Graph(){
         head = null;
         size = 0;
     }
 
+    /***
+     * To get the size of graph
+     * @return size of graph
+     */
     public int getSize(){
         return size;
     }
 
+    /***
+     * Check whether the vertex is exist inside the graph or not
+     * @param v Vertex Information
+     * @return boolean
+     */
     public boolean hasVertex(T v){
         if(head == null){
             return false;
@@ -103,19 +152,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         return false;
     }
 
-    public int getIndeg(T v){
-        if(hasVertex(v) == true){
-            Vertex<T,N> temp = head;
-            while(temp != null){
-                if(temp.vertexInfo.compareTo(v) == 0){
-                    return temp.indeg;
-                }
-                temp = temp.nextVertex;
-            }
-        }
-        return -1;
-    }
-
+    /***
+     * Add vertex to the graph
+     * @param v Vertex Information
+     * @return boolean
+     */
     public boolean addVertex(T v){
         if(hasVertex(v) == false){
             Vertex<T,N> temp = head;
@@ -137,6 +178,12 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
             return false;
     }
 
+    /***
+     * Check whether the edge is exist or not
+     * @param source the source Vertex
+     * @param destination the destination vertex
+     * @return boolean
+     */
     public boolean hasEdge(T source, T destination){
         if(head == null){
             return false;
@@ -160,6 +207,12 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         return false;
     }
 
+    /***
+     * Add the edge to the graph
+     * @param source Source vertex to be added
+     * @param destination the link to the destination
+     * @return boolean
+     */
     public boolean addEdge(T source, T destination){
         if(head == null){
             return false;
@@ -196,6 +249,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         return false;
     }
 
+    /***
+     * Get all the connection for the vertex
+     * @param v Vertex as a starting point
+     * @return a list of vertex that have connection with this vertex
+     */
     public ArrayList<Vertex<T,N>> getNeighbours(Vertex<T,N> v){
         if(!hasVertex(v.vertexInfo)){
             return null;
@@ -215,6 +273,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         return list;
     }
 
+    /***
+     * Breath First Search Algorithm to search shortest path
+     * @param source Starting point of the user
+     * @param destination Destination of the user want to reach
+     */
     public void bfs(T source, T destination){
         //Create queue
         LinkedList<Vertex> queue = new LinkedList<>();
@@ -267,7 +330,11 @@ class Graph <T extends Comparable<T>,N extends Comparable <N>>{
         }
     }
 
-    //Function to trace the route using preceding nodes
+    /***
+     * Function to trace the route using preceding nodes and print the routes
+     * @param source Starting point of the path
+     * @param destination End point of the path
+     */
     private void trace_route(T source,T destination){
         Vertex<T,N> destinationVertex = head;
         while(destinationVertex != null){
