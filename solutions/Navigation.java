@@ -108,6 +108,7 @@ class Edge<T extends Comparable<T>,N extends Comparable <N>> {
     public Edge(Vertex<T,N> destination, Edge<T,N> a){
         toVertex = destination;
         nextEdge = a;
+    }
 }
 
 class Graph <T extends Comparable<T>,N extends Comparable <N>>{
