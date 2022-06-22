@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.royallineandco.MainPageController">
+   <children>
+      <ImageView fitHeight="1037.0" fitWidth="1280.0" layoutX="-2.0" layoutY="-237.0" pickOnBounds="true">
+         <image>
+            <Image url="@fxml-image/MainPage_background.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="382.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Royal Line &amp; Co.">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="90.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+      </Text>
+      <Text layoutX="521.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WE WILL TAKE YOU TO THE RIGHT PATH!">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="DirectButton" layoutX="975.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#DirectButtonClicked" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: FDFCDC;" text="LET'S TRAVEL">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
